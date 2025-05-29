@@ -1,0 +1,15 @@
+trigger:
+- main
+
+pool:
+  name: Default
+
+steps:
+- script: echo My Maven Application
+  displayName: 'Run a one-line script'
+
+- script: mvn clean install
+  displayName: 'Building the Maven application'
+
+- script: mvn exec:java -Dexec.mainClass="com.example.App"
+  displayName: 'Running the Maven application'
